@@ -216,3 +216,39 @@ typedef NSString TypedefString;
 }
 
 @end
+
+
+@interface DynamicPropertyHolder : NSObject
+@property (nonatomic, copy) id objectProperty;
+@property (nonatomic, assign) int intProperty;
+@property (readonly, nonatomic, strong) id readonlyProperty;
+@property (nonatomic, getter=customPropertyGetter, setter=customPropertySetter:, assign) int customProperty;
+@end
+
+@implementation DynamicPropertyHolder
+@dynamic objectProperty;
+@dynamic intProperty;
+@dynamic readonlyProperty;
+@dynamic customProperty;
+@end
+
+@interface MKTObjectMockDynamicPropertyTests : XCTestCase
+@end
+
+@implementation MKTObjectMockDynamicPropertyTests
+{
+    DynamicPropertyHolder *mockDynamicPropertyHolder;
+}
+
+- (void)setUp
+{
+    [super setUp];
+    mockDynamicPropertyHolder = OCMClassMock([DynamicPropertyHolder class]);
+}
+
+- (void)testShouldRespondToDynamicGetter
+{
+    XCTAssertTrue([mockDynamicPropertyHolder respondsToSelector:@selector(objectProperty)]);
+}
+
+@end

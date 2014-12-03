@@ -19,8 +19,11 @@
 #import "NSObject+OCMAdditions.h"
 #import "OCMFunctions.h"
 #import "OCMInvocationStub.h"
+#import "MKTDynamicProperties.h"
 
-@implementation OCClassMockObject
+@implementation OCClassMockObject {
+    MKTDynamicProperties *dynamicProperties;
+}
 
 #pragma mark  Initialisers, description, accessors, etc.
 
@@ -28,6 +31,7 @@
 {
 	[super init];
 	mockedClass = aClass;
+    dynamicProperties = [[MKTDynamicProperties alloc] initWithClass:aClass];
     [self prepareClassForClassMethodMocking];
 	return self;
 }
@@ -145,7 +149,6 @@
     class_addMethod(metaClass, aliasSelector, originalIMP, types);
 }
 
-
 - (void)forwardInvocationForClassObject:(NSInvocation *)anInvocation
 {
 	// in here "self" is a reference to the real class, not the mock
@@ -171,7 +174,15 @@
 
 - (NSMethodSignature *)methodSignatureForSelector:(SEL)aSelector
 {
-    return [mockedClass instanceMethodSignatureForSelector:aSelector];
+    NSMethodSignature *mockMethodSignature = [mockedClass instanceMethodSignatureForSelector:aSelector];
+    if (mockMethodSignature) {
+        return mockMethodSignature;
+    } else {
+        NSMethodSignature *dynamicPropertySignature = [dynamicProperties methodSignatureForSelector:aSelector];
+        if (dynamicPropertySignature)
+            return dynamicPropertySignature;
+    }
+    return nil;
 }
 
 - (Class)mockObjectClass
@@ -186,7 +197,8 @@
 
 - (BOOL)respondsToSelector:(SEL)selector
 {
-    return [mockedClass instancesRespondToSelector:selector];
+    return [dynamicProperties methodSignatureForSelector:selector] ||
+           [mockedClass instancesRespondToSelector:selector];
 }
 
 - (BOOL)isKindOfClass:(Class)aClass

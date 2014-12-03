@@ -172,6 +172,10 @@
 		D31108C91828DBD600737925 /* OCObserverMockObjectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 03B316291463350E0052CD09 /* OCObserverMockObjectTests.m */; };
 		D31108CA1828DBD600737925 /* NSInvocationOCMAdditionsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 03B3161F1463350E0052CD09 /* NSInvocationOCMAdditionsTests.m */; };
 		D31108CB1828DC1300737925 /* libOCMock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 030EF0DC14632FF700B04273 /* libOCMock.a */; };
+		E70818BC1A2F05FB00DB520B /* MKTDynamicProperties.h in Headers */ = {isa = PBXBuildFile; fileRef = E70818BA1A2F05FB00DB520B /* MKTDynamicProperties.h */; };
+		E70818BD1A2F05FB00DB520B /* MKTDynamicProperties.h in Headers */ = {isa = PBXBuildFile; fileRef = E70818BA1A2F05FB00DB520B /* MKTDynamicProperties.h */; };
+		E70818BE1A2F05FB00DB520B /* MKTDynamicProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = E70818BB1A2F05FB00DB520B /* MKTDynamicProperties.m */; };
+		E70818BF1A2F05FB00DB520B /* MKTDynamicProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = E70818BB1A2F05FB00DB520B /* MKTDynamicProperties.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -290,6 +294,8 @@
 		D31108B71828DB8700737925 /* OCMockLibTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "OCMockLibTests-Info.plist"; sourceTree = "<group>"; };
 		D31108B91828DB8700737925 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D31108BD1828DB8700737925 /* OCMockLibTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OCMockLibTests-Prefix.pch"; sourceTree = "<group>"; };
+		E70818BA1A2F05FB00DB520B /* MKTDynamicProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKTDynamicProperties.h; sourceTree = "<group>"; };
+		E70818BB1A2F05FB00DB520B /* MKTDynamicProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKTDynamicProperties.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -448,6 +454,8 @@
 		037ECD5618FB0D2E00AF0E4C /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				E70818BA1A2F05FB00DB520B /* MKTDynamicProperties.h */,
+				E70818BB1A2F05FB00DB520B /* MKTDynamicProperties.m */,
 				03E98D4918F308B400522D42 /* OCMLocation.h */,
 				03E98D4A18F308B400522D42 /* OCMLocation.m */,
 				2FA28006D043CBDBBAEF6E3F /* OCMMacroState.h */,
@@ -593,6 +601,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				03B3168B14633A4F0052CD09 /* OCMock.h in Headers */,
+				E70818BC1A2F05FB00DB520B /* MKTDynamicProperties.h in Headers */,
 				03B315EB146333C00052CD09 /* OCMockObject.h in Headers */,
 				03B315F0146333C00052CD09 /* OCMStubRecorder.h in Headers */,
 				03B315C3146333BF0052CD09 /* OCMArg.h in Headers */,
@@ -632,6 +641,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				03B3168E14633D9C0052CD09 /* OCMock.h in Headers */,
+				E70818BD1A2F05FB00DB520B /* MKTDynamicProperties.h in Headers */,
 				03B315EC146333C00052CD09 /* OCMockObject.h in Headers */,
 				03B315F1146333C00052CD09 /* OCMStubRecorder.h in Headers */,
 				03B315C4146333BF0052CD09 /* OCMArg.h in Headers */,
@@ -842,6 +852,7 @@
 				03B315DE146333BF0052CD09 /* OCMIndirectReturnValueProvider.m in Sources */,
 				03B315E3146333BF0052CD09 /* OCMNotificationPoster.m in Sources */,
 				03B315E8146333BF0052CD09 /* OCMObserverRecorder.m in Sources */,
+				E70818BE1A2F05FB00DB520B /* MKTDynamicProperties.m in Sources */,
 				03B315ED146333C00052CD09 /* OCMockObject.m in Sources */,
 				03B315F2146333C00052CD09 /* OCMStubRecorder.m in Sources */,
 				03B315F7146333C00052CD09 /* OCMPassByRefSetter.m in Sources */,
@@ -880,6 +891,7 @@
 				03B315DB146333BF0052CD09 /* OCMExceptionReturnValueProvider.m in Sources */,
 				03B315E0146333BF0052CD09 /* OCMIndirectReturnValueProvider.m in Sources */,
 				03B315E5146333BF0052CD09 /* OCMNotificationPoster.m in Sources */,
+				E70818BF1A2F05FB00DB520B /* MKTDynamicProperties.m in Sources */,
 				03B315EA146333BF0052CD09 /* OCMObserverRecorder.m in Sources */,
 				03B315EF146333C00052CD09 /* OCMockObject.m in Sources */,
 				03B315F4146333C00052CD09 /* OCMStubRecorder.m in Sources */,
